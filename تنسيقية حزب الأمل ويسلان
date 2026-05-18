@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حزب الأمل ويسلان</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+  font-family: 'Tajawal', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f4d0f 0%, #1a5c1a 100%);
+  color: #222;
+  line-height: 1.8;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  color: #fff;
+}
+header img {
+  width: 140px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+header h1 {
+  font-size: 2.5em;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+.card {
+  background: #fff;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.notice {
+  background:#fff8e1; 
+  border-right:5px solid #1a5c1a;
+}
+.card h2 {
+  color: #1a5c1a;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+.card p {
+  color: #555;
+  margin-bottom: 15px;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  transition: 0.3s;
+}
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #1a5c1a;
+}
+.btn {
+  background: #1a5c1a;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #0f4d0f;
+  transform: translateY(-2px);
+}
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: #fff;
+  opacity: 0.8;
+}
+@media(max-width: 600px){
+  header h1 {font-size: 2em;}
+  .card {padding: 20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="شعار حزب الأمل ويسلان">
+  <h1>حزب الأمل ويسلان</h1>
+  <p>القوة الهادئة... الأمل الممكن</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>من نحن</h2>
+    <p>حزب الأمل ويسلان مبني على القرب من الناس، الشفافية، والخدمة الميدانية. كنّا مع الساكنة فالفرح والشدّة، وغادي نكملو بنفس الروح.</p>
+    <p>هدفنا: ويسلان أحسن، بخدمة نظيفة وصادقة.</p>
+  </div>
+
+  <div class="card notice">
+    <h2>الانخراط</h2>
+    <p><strong>للمواطنات والمواطنين الراغبين في تقديم طلب الانخراط بحزب الأمل ويسلان</strong>، 
+    يمكنكم الآن ملء الاستمارة أدناه. غادي يتحول الطلب مباشرة للتنسيقية عبر واتساب.</p>
+  </div>
+
+  <div class="card">
+    <h2>طلب الانخراط</h2>
+    <form id="joinForm">
+      <input type="text" id="name" placeholder="الإسم الكامل" required>
+      <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+      <input type="number" id="age" placeholder="العمر" min="18">
+      <input type="text" id="job" placeholder="المهنة">
+      <input type="text" id="address" placeholder="الحي/العنوان">
+      <textarea id="message" placeholder="ملاحظة أو دافع الانخراط" rows="4"></textarea>
+      <button type="submit" class="btn">أرسل الطلب عبر واتساب</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>تواصل معنا</h2>
+    <p>عندك سؤال أو اقتراح؟ مرحبا بيك فأي وقت.</p>
+    <p><strong>المقر:</strong> ويسلان - مكناس</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 حزب الأمل ويسلان - جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+document.getElementById("joinForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let age = document.getElementById("age").value;
+  let job = document.getElementById("job").value;
+  let address = document.getElementById("address").value;
+  let message = document.getElementById("message").value;
+  
+  let text = `*طلب انخراط - حزب الأمل ويسلان*%0A-------------------------` +
+             `%0A*الإسم:* ${name}` +
+             `%0A*الهاتف:* ${phone}` +
+             `%0A*العمر:* ${age}` +
+             `%0A*المهنة:* ${job}` +
+             `%0A*العنوان:* ${address}` +
+             `%0A*الملاحظة:* ${message}`;
+  
+  let whatsappNumber = "2126XXXXXXXX"; // بدّل هاد الرقم برقم واتساب التنسيقية بلا + وبلا فراغات
+  window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+});
+</script>
+
+</body>
+</html>
